@@ -15,7 +15,8 @@ pipeline {
     post {
         always {
             echo 'Собираем Allure отчет...'
-            allure includeProperties: false, jdk: '', results: [[path: 'MyCompany.Tests/bin/Release/net8.0/allure-results']]
+            allure includeProperties: false, jdk: '', results: [[path: '/var/jenkins_home/workspace/local-project/MyCompany.Tests/bin/Release/net8.0/allure-results']]
+
         }
     }
 }
