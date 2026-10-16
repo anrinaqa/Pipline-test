@@ -7,7 +7,7 @@ pipeline {
                 echo 'Передаем команду на хост-компьютер...'
                 // Магия: Дженкинс через локальную сеть стучится в ваш Windows PowerShell и запускает тесты
                 // Замените путь C:/work/MyCompany.Tests на ваш, если он отличается
-                sh 'curl -X POST http://docker.internal --data "cd C:/work/MyCompany.Tests && dotnet test --configuration Release"'
+                sh 'curl -X POST http://host.docker.internal:8000/run --data "cd C:/work/MyCompany.Tests && dotnet test --configuration Release"'
             }
         }
     }
